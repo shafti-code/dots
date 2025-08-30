@@ -1,0 +1,8 @@
+font-size = 16
+theme = Borland
+background = #000000
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+macos-auto-secure-input = true
+macos-titlebar-style = transparent

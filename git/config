@@ -1,0 +1,12 @@
+[user]
+    name = shafti-code
+    email = shafti.code@gmail.com
+[url "git@github.com:shafti-code/"]
+    insteadOf = "shafti:"
+[url "git@github.com:"]
+    insteadOf = "gh:"
+[push]
+    autoSetupRemote = true
+    default = current 
+[pull]
+    rebase = true
