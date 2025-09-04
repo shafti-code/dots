@@ -1,5 +1,5 @@
 font-size = 16
-theme = Borland
+theme = catppuccin mocha
 background = #000000
 font-feature = -calt
 font-feature = -liga
