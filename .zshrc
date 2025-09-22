@@ -39,6 +39,7 @@ alias grep='grep --color=auto'
 alias sshafti='ssh shafti@192.168.0.109'
 alias gi='generacja.sh'
 alias darwin='sudo darwin-rebuild switch --flake $HOME/.config/nix#system'
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 bindkey -v # enables vi bindings
 
