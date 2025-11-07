@@ -39,10 +39,16 @@ alias ls='ls -a --color=auto'
 alias grep='grep --color=auto'
 alias sshafti='ssh shafti@192.168.0.109'
 alias gi='generacja.sh'
+alias spawn='spawn.sh'
 alias darwin='sudo darwin-rebuild switch --flake $HOME/.config/nix#system'
 alias love="/Applications/love.app/Contents/MacOS/love"
 
 bindkey -v # enables vi bindings
+
+poprepo(){
+    local repolist="$(gh repo list --json url --jq '.[] | .url' | fzf)"
+    open $repolist
+}
 
 autoload -Uz history-incremental-search-backward history-incremental-search-forward #bring those funcs into scope
 bindkey -M vicmd '/' history-incremental-search-backward # if in mode vicmd hit / to search history kinda like vim
