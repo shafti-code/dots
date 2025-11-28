@@ -46,8 +46,17 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 bindkey -v # enables vi bindings
 
 poprepo(){
-    local repolist="$(gh repo list --json url --jq '.[] | .url' | fzf)"
-    open $repolist
+    local personalRepoList="$(gh repo list --json url --jq '.[] | .url' )"
+    local orgRepoList="$(gh repo list Generacja-Innowacja --json url --jq '.[] | .url' )"
+    local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf)"
+    open $picked
+}
+
+popclone(){
+    local personalRepoList="$(gh repo list --json url --jq '.[] | .url' )"
+    local orgRepoList="$(gh repo list Generacja-Innowacja --json url --jq '.[] | .url' )"
+    local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf)"
+    git clone $picked
 }
 
 autoload -Uz history-incremental-search-backward history-incremental-search-forward #bring those funcs into scope

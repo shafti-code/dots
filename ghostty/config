@@ -1,9 +1,10 @@
-font-size =  14
-theme = Aura
+font-size = 18
+theme = Catppuccin Mocha
 background = #000000
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 macos-auto-secure-input = true
 macos-titlebar-style = transparent
-scrollbar = never
+#scrollbar = never
+font-thicken = true
