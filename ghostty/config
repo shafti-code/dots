@@ -1,10 +1,18 @@
-font-size = 18
-theme = Catppuccin Mocha
-background = #000000
+font-size = 20
+font-family = Iosevka Nerd Font Mono
+#font-family = Andale Mono
+# theme = light:Rose Pine Dawn,dark:Night Owl
+# theme = light:Rose Pine Dawn,dark:Embark
+theme = Black Metal
+# theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+font-thicken = true
 macos-auto-secure-input = true
 macos-titlebar-style = transparent
 #scrollbar = never
-font-thicken = true
+mouse-hide-while-typing = true
+background-opacity = 1
+
+

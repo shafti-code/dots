@@ -16,13 +16,22 @@ precmd() { vcs_info }
 export EDITOR=nvim
 export VISUAL=nvim
 export MANPAGER='nvim +Man!'
+
 export PATH="$PATH:/Users/shafti/.lmstudio/bin"
+export PATH="$PATH:/Users/shafti/Projects/img2text/build"
+
 export PROMPT='%B%F{magenta}%n  %1~ ${vcs_info_msg_0_} ✿➤ %f%b' 
+export PICO_SDK=$HOME/Projects/pico-sdk/
 
 
 fcd(){
     cd "$(fzf --walker=dir,hidden --smart-case)"
 }
+
+hi(){
+    echo hello $(whoami)
+}
+
 # fhist(){
 #     local history_command
 #     history_command="$(cat $HOME/.zsh_history | awk '!seen[$0]++'  | fzf --smart-case --style=minimal --height 3 --exit-0 --bind 'ctrl-r:abort')"
@@ -30,6 +39,21 @@ fcd(){
 # }
 # zle -N fhist
 # bindkey '^R' fhist
+#
+
+tflip(){
+    if [[ $1 == "dark" ]]; then
+        tmux set -g status-fg "#ffffff"
+        export TMUX_THEME=2
+    else
+    if [[ $1 == "light" ]]; then
+        tmux set -g status-fg "#000000"
+        export TMUX_THEME=1
+    else
+        echo "invalid arg"
+    fi
+    fi
+}
 
 dell='shaftidell@192.168.200'
 
@@ -47,6 +71,7 @@ bindkey -v # enables vi bindings
 
 poprepo(){
     local personalRepoList="$(gh repo list --json url --jq '.[] | .url' )"
+    #github organizations have to be state explicityly so just put the ones you want to search here
     local orgRepoList="$(gh repo list Generacja-Innowacja --json url --jq '.[] | .url' )"
     local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf)"
     open $picked
@@ -58,6 +83,20 @@ popclone(){
     local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf)"
     git clone $picked
 }
+
+todo(){
+    nvim ~/todo/todo.md
+}
+
+note(){
+    if [[ $# == 0 ]]; then
+        nvim ~/notes/$(ls ~/notes | fzf)
+    else
+        nvim ~/notes/$1.md
+    fi
+
+}
+
 
 autoload -Uz history-incremental-search-backward history-incremental-search-forward #bring those funcs into scope
 bindkey -M vicmd '/' history-incremental-search-backward # if in mode vicmd hit / to search history kinda like vim
@@ -74,4 +113,5 @@ bindkey -M vicmd 'vv' edit-command-line # finally when you press v you are shot 
 
 
 export PATH="$PATH:/Users/shafti/tmux_scripts/"
+export PATH="$PATH:/Users/shafti/simple_templates"
 
