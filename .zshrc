@@ -25,7 +25,7 @@ export PICO_SDK=$HOME/Projects/pico-sdk/
 
 
 fcd(){
-    cd "$(fzf --walker=dir,hidden --smart-case)"
+    cd "$(fzf --tmux --walker=dir,hidden --smart-case)"
 }
 
 hi(){
@@ -73,14 +73,14 @@ poprepo(){
     local personalRepoList="$(gh repo list --json url --jq '.[] | .url' )"
     #github organizations have to be state explicityly so just put the ones you want to search here
     local orgRepoList="$(gh repo list Generacja-Innowacja --json url --jq '.[] | .url' )"
-    local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf)"
+    local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf --tmux)"
     open $picked
 }
 
 popclone(){
     local personalRepoList="$(gh repo list --json url --jq '.[] | .url' )"
     local orgRepoList="$(gh repo list Generacja-Innowacja --json url --jq '.[] | .url' )"
-    local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf)"
+    local picked="$(echo -e "$personalRepoList\n$orgRepoList" | fzf --tmux)"
     git clone $picked
 }
 
@@ -90,7 +90,7 @@ todo(){
 
 note(){
     if [[ $# == 0 ]]; then
-        nvim ~/notes/$(ls ~/notes | fzf)
+        nvim ~/notes/$(ls ~/notes | fzf --tmux)
     else
         nvim ~/notes/$1.md
     fi
