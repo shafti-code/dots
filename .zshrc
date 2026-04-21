@@ -24,7 +24,10 @@ precmd() { vcs_info }
 export EDITOR=nvim
 export VISUAL=nvim
 export MANPAGER='nvim +Man!'
-export GOPATH=$(go env GOPATH)
+which go >> /dev/null
+if [[ $? == 0 ]]; then
+    export GOPATH=$(go env GOPATH)
+fi
 
 export PATH="$PATH:/Users/shafti/.lmstudio/bin"
 export PATH="$PATH:/Users/shafti/Projects/img2text/build"
