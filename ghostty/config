@@ -1,18 +1,11 @@
-font-size = 24
-# font-family = Iosevka Nerd Font Mono
-#font-family = Andale Mono
-# theme = light:Rose Pine Dawn,dark:Night Owl
-# theme = light:Rose Pine Dawn,dark:Embark
-theme = Black Metal
-# theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
+font-size = 16
+theme = Rose Pine
+# background = #000000
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-font-thicken = true
 macos-auto-secure-input = true
 macos-titlebar-style = transparent
-#scrollbar = never
-mouse-hide-while-typing = true
-background-opacity = 1
 
-
+custom-shader = shaders/cursor_warp.glsl
+custom-shader = shaders/ripple_cursor.glsl
