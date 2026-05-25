@@ -1,5 +1,6 @@
 font-size = 16
-theme = Monokai Pro
+# theme = Gruvbox Material Dark
+theme = Rose Pine
 # background = #000000
 font-feature = -calt
 font-feature = -liga
@@ -7,5 +8,5 @@ font-feature = -dlig
 macos-auto-secure-input = true
 macos-titlebar-style = transparent
 
-custom-shader = shaders/cursor_warp.glsl
-custom-shader = shaders/ripple_cursor.glsl
+background-opacity = 0.7
+background-blur = 15

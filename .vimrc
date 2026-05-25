@@ -1,0 +1,11 @@
+se smartindent
+se signcolumn="yes"
+se scrolloff=8
+se tabstop=4
+se softtabstop=4
+se shiftwidth=4
+se expandtab
+se nowrap
+se nu
+se rnu
+colorscheme retrobox

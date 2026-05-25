@@ -1,10 +1,12 @@
 #!/bin/bash
 rm -rf ~/.zshrc 
+rm -rf ~/.vimrc 
 rm -rf ~/.config/ghostty
 rm -rf ~/.config/git
 rm -rf ~/.config/tmux
 
 ln -s ~/dots/.zshrc ~/.zshrc 
+ln -s ~/dots/.vimrc ~/.vimrc 
 ln -s ~/dots/./ghostty ~/.config/ghostty
 ln -s ~/dots/./git ~/.config/git
 ln -s ~/dots/./tmux  ~/.config/tmux
